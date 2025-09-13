@@ -624,7 +624,10 @@ struct IPlayer : public IExtensible, public IEntity
 	/// @param distance The distance to play at
 	virtual void playAudio(StringView url, bool usePos = false, Vector3 pos = Vector3(0.f), float distance = 0.f) = 0;
 
-	virtual bool playerCrimeReport(IPlayer& suspect, int crime) = 0;
+	/// Play a crime report for the player
+	/// @param suspect The suspect player who will be described in the report
+	/// @param crime The crime ID, which will be reported as a 10-code (i.e. 10-16 if 16 was passed as the crime)
+	virtual bool playCrimeReport(IPlayer& suspect, int crime) = 0;
 
 	/// Stop playing audio stream for the player
 	virtual void stopAudio() = 0;
